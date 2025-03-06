@@ -6,7 +6,7 @@ const App = () => {
   const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
 
   return (
-    <Router>
+    <Router basename="/">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={isAuthenticated ? <Dashboard /> : <Navigate to="/" />} />

@@ -16,8 +16,8 @@ const Login = () => {
 
   const handleLogin = () => {
     if (username === "testuser" && password === "password123") {
-      localStorage.setItem("isAuthenticated", "true");
       navigate("/dashboard"); // Ensure navigation happens instantly
+      localStorage.setItem("isAuthenticated", "true");
     } else {
       setError("Invalid credentials");
     }

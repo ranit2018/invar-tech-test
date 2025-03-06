@@ -6,8 +6,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
-
-  // Check if user is already logged in
+ 
   useEffect(() => {
     if (localStorage.getItem("isAuthenticated") === "true") {
       navigate("/dashboard");
@@ -16,8 +15,8 @@ const Login = () => {
 
   const handleLogin = () => {
     if (username === "testuser" && password === "password123") {
-      navigate("/dashboard"); // Ensure navigation happens instantly
       localStorage.setItem("isAuthenticated", "true");
+      navigate("/dashboard"); // Ensure navigation happens instantly
     } else {
       setError("Invalid credentials");
     }

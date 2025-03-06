@@ -1,7 +1,17 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+   
+    if (!localStorage.getItem("isAuthenticated") === "true") {
+      navigate("/");
+    }
+
+  }, [])
+  
 
   const handleLogout = () => {
     localStorage.removeItem("isAuthenticated");
